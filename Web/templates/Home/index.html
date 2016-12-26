@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>Title</title>
+    <link href="{{ url_for('static',filename='plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='plugins/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='plugins/metisMenu/css/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/site.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/tabs.css') }}" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <!-- 左侧导航栏 开始 -->
+    <nav class="wrapper-nav sidebar-container">
+{#        <ul class="nav metismenu" id="sidebar-menus">#}
+{#            {%- for m in menus if m.pid == 0 %}#}
+{#             <li>#}
+{#             <a href="{{ m.link }}"><i class="{{ m.link }}e"></i> <span class="nav-label">{{ m.name }}</span> {%- if m.nodeCount > 0 %}  <span class="fa arrow"></span>{%- endif %} </a>#}
+{#                {%- for sub in menus if sub.pid == m.id  %}#}
+{#                 <ul class="nav nav-sub-level">#}
+{#                    <li ><a href="{{ sub.url }}">{{ sub.name }}</a></li>#}
+{#                    {%- for thr in menus if thr.pid == sub.id  %}#}
+{#                     <ul class="nav nav-sub-level">#}
+{#                        <li ><a href="#" data-id="{{ thr.url }}" data-url="{{ thr.link }}">{{ thr.name }}</a></li>#}
+{#                     </ul>#}
+{#                    {%- endfor %}#}
+{#                 </ul>#}
+{#                {%- endfor %}#}
+{#            </li>#}
+{#            {%- endfor %}#}
+{#        </ul>#}
+    </nav>
+
+    <!-- 左侧导航栏 结束 -->
+    <!-- 右侧部分 开始 -->
+    <div class="wrapper-body">
+        <div class="tabs-container">
+            <button class="roll-left"><i class="fa fa-backward"></i></button>
+            <nav class="tabs-menus-nav">
+                <div class="tabs-menus">
+                    <a href="javascript:;" class="tabs-menu active" data-id="0">首页</a>
+                </div>
+            </nav>
+            <button class="roll-right"><i class="fa fa-forward"></i></button>
+            <div class="btn-group tabs-close">
+                <button class="dropdown" data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+                </button>
+                <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                    <li class="tabs-current"><a>定位当前选项卡</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="tabs-close-all"><a>关闭全部选项卡</a>
+                    </li>
+                    <li class="tabs-close-other"><a>关闭其他选项卡</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tabs-frames">
+            <iframe class="tabs-frame" data-id="0" name="iframe0" width="100%" height="100%" src="/home/mainpage" frameborder="0"
+                     seamless=""></iframe>
+        </div>
+    </div>
+    <!-- 右侧部分 结束 -->
+</div>
+
+</body>
+    <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='plugins/metisMenu/js/metisMenu.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/tabs.js') }}"></script>
+{#    <script src="{{ url_for('static',filename='js/common.js') }}"></script>#}
+
+<script>
+    $(function(){
+
+
+});
+
+</script>
+</html>

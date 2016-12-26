@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        html,
+        body {
+            font-family: "新宋体",Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            background-color: white;
+            color: black;
+            padding:0;
+            margin:0;
+            border: 0;
+            text-align: center;
+
+        }
+        .page
+        {
+            width: 19cm;
+            height: 27cm;
+            margin: 0 auto;
+            border: 2px solid red;
+        }
+        .hospital-name
+        {
+            font-family: 楷体_GB2312,华文新魏,Arial,Sans-Serif;
+            font-size: 22pt;
+            line-height: 1cm;
+        }
+        .report-name
+        {
+            font-family: 楷体_GB2312,华文新魏,Arial,Sans-Serif;
+            font-size: 16pt;
+            line-height: 1cm;
+        }
+
+        #head
+        {
+            margin-top: 0.5cm;
+            width:100%;
+            position: relative;
+
+        }
+        #logo
+        {
+            padding-top: 0.5cm;
+            margin-left: 2cm;
+            float: left;
+            width:4.5cm;
+            height:2.5cm;
+        }
+        #title
+        {
+            float: left;
+            width:12cm;
+            text-align: center;
+
+        }
+        #info {
+
+            width: 100%;
+            min-height: 1px;
+            margin: 0 auto;
+            padding-top: 0.2cm;
+            float:left;
+            position: relative;
+        }
+        .col-xs-2 {
+            float: left;
+            width: 3cm;
+            position: relative;
+            min-height: 1px;
+        }
+        .col-xs-2 span
+        {
+            font-size: 15px;
+            font-family: "新宋体";
+        }
+
+        .clear
+        {
+            clear: both;
+        }
+        #Findings
+        {
+            margin: 0 auto;
+            padding-top:4px;
+            height: 13cm;
+            text-align: left;
+        }
+         #Impression
+        {
+             margin: 0 auto;
+             padding-top:4px;
+             height: 7cm;
+             text-align: left;
+        }
+        .none-border
+        {
+            border: 0;
+            border-style: none;
+            width:100px;
+            background-color:Transparent;
+            line-height: 4mm;
+        }
+        #footer
+        {
+            margin: 0 auto;
+        }
+        #footer span
+        {
+            text-align: right;
+
+        }
+
+
+        .text-area
+        {
+            display:block;
+            font-family:"楷体_GB2312";
+            padding-top:4px;
+            overflow-y:hidden;
+            overflow-x:hidden;
+            color:Black;
+            width:90%;
+            font-size:13pt;
+            text-align:justify;
+        }
+
+    </style>
+
+
+    <style media=print>
+        .Noprint {
+            display: none;
+        }
+
+        .PageNext {
+            page-break-after: always;
+        }
+    </style>
+
+</head>
+<body>
+<div class="page">
+    <div id="head">
+        <div id="logo"><img src="../ReportTemplate/ncwch.jpg" alt=" =" width="100%" height="100%" /></div>
+        <div id="title">
+            <div class="hospital-name">天津新世纪妇儿医院</div>
+            <div class="report-name">超声检查报告单</div>
+            <div style="text-align: left; margin-left: 2cm;"><strong>检查单号：</strong>
+                <input id="Accession_Num" name="Accession_Num" readonly="readonly" value="(#Accession_Num)" width="100px"  type="text" class="none-border" />
+            </div>
+        </div>
+    </div>
+    <div id="info">
+        <div class="col-xs-2"><span><strong>姓&nbsp;&nbsp;名</strong></span></div>
+        <div class="col-xs-2"><input name="Patient_Name2" type="text" class="none-border" id="Patient_Name2" value="(#Patient_Name)" readonly=readonly /></div>
+        <div class="col-xs-2"><span><strong>性&nbsp;&nbsp;别</strong></span></div>
+        <div class="col-xs-2"><input name="Patient_Sex2" type="text" class="none-border" id="Patient_Sex2" value="(#Patient_Sex)" readonly=readonly /></div>
+        <div class="col-xs-2"><span><strong>病 历 号</strong></span></div>
+        <div class="col-xs-2"><input name="Patient_Id2" type="text" class="none-border" id="Patient_Id2" value="(#Patient_Id)" readonly=readonly /></div>
+        <div class="col-xs-2"><span><strong>年&nbsp;&nbsp;龄</strong></span></div>
+        <div class="col-xs-2"><input name="Patient_Age2" type="text" class="none-border" id="Patient_Age2" value="(#Patient_Age)" readonly="readonly" /></div>
+        <div class="col-xs-2"><span><strong>申请科室</strong></span></div>
+        <div class="col-xs-2"><input id="Category2" name="Category2" value="(#Category)" readonly="readonly" type="text" class="none-border" /></div>
+        <div class="col-xs-2"><span><strong>检查时间</strong></span></div>
+        <div class="col-xs-2"><input name="Perfrmd_Start_Date2" type="text" class="none-border" id="Perfrmd_Start_Date2" value="(#Perfrmd_Start_Date)" readonly="readonly" /></div>
+    </div>
+    <div id="Findings" class="clear">
+        <div>
+            <span style="margin-left: 2cm">超声所见:</span>
+        </div>
+        <div>
+            <textarea name="Findings" id="Findings" class="text-area none-border">(#Findings)</textarea>
+        </div>
+    </div>
+    <div id="Impression">
+        <div class="clear" style="margin-left: 2cm">超声提示：</div>
+        <div>
+              <textarea name="Impression" class="text-area none-border" id="Impression">(#Impression)</textarea>
+        </div>
+    </div>
+    <div id="footer">
+        <div><img alt="" src="../Image/Print_Slot.png" style="width:90%;height:2px" /></div>
+        <div>
+            <span class="col-xs-2">录入员：</span><span class="col-xs-2"><input id="#LRY" name="#LRY" value="(#LRY)" type="text" class="none-border" /></span>
+            <span class="col-xs-2">审核医师：</span><span class="col-xs-2"><input id="Verification_Physician" name="Verification_Physician" readonly=readonly type="text" class="none-border" /></span>
+            <span class="col-xs-2">报告时间：</span><span class="col-xs-2"><input id="Verification_Date" name="Verification_Date" value="(#Verification_Date)" readonly="readonly" type="text" class="none-border" /></span>
+        </div>
+        <div class="clear" style="font-size:7pt;text-align: left;width: 90%;margin: 0 auto;">1、本次超声检查只检查报告中所描述内容，没有描述的胎儿结构不在检查范围内，因目前技术条件胎儿指、趾、耳、眼、腭、甲状腺、染色体、生殖器以及微小的室缺、房缺、卵圆孔未闭等尚不能作为常规项目进行检查，特此说明。2、超声提示意见不是临床诊断，也不是病历诊断，是需要与产科临床、遗传学、胚胎学、小儿科学等学科密切结合的辅助影像检查手段，仅供临床医生参考。</div>
+    </div>
+
+
+</div>
+</body>
+</html>

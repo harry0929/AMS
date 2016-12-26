@@ -1,0 +1,106 @@
+.tabs-container
+{
+    float: left;
+    position: relative;
+    height: 42px;
+    background: #fafafa;
+    line-height: 40px;
+    border-bottom: solid 2px #2f4050;
+    width: 100%;
+
+}
+.tabs-container button
+{
+    margin: 0;
+    text-transform: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+    padding:0;
+    margin:0;
+    border: 0;
+    /*position: absolute;*/
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    top: 0;
+    padding: 1px 6px;
+    background: #fff;
+    color: #999;
+    z-index: 2;
+    cursor: pointer;
+    border-right: solid 1px #eee;
+}
+
+.tabs-container button:hover
+{
+    background-color: #fafafa;
+}
+.roll-left
+{
+    position: absolute;
+    left: 0;
+    border-right: solid 1px #eee;
+    width: 40px;
+}
+.roll-right
+{
+    position: absolute;
+    width: 40px;
+    right: 140px;
+}
+.tabs-menus-nav
+{
+    width: 100000px;
+    overflow: hidden;
+}
+.tabs-menus
+{
+    margin-left: 40px;
+    height: 40px;
+    float:left;
+}
+.tabs-menus a
+{
+    display: block;
+    float: left;
+    border-right: solid 1px #eee;
+    padding: 0 15px;
+    color: #999;
+}
+.tabs-menus a.active
+{
+    background-color: #2f4050;
+    color: #a7b1c2;
+}
+
+.tabs-menus a.active:hover
+{
+    background-color: #2f4050;
+    color: #FFFFFF;
+}
+
+.tabs-menus a:hover
+{
+    background-color: #f2f2f2;
+}
+
+.tabs-close
+{
+    right: 60px;
+    width: 80px;
+    position: absolute;
+}
+
+.tabs-close button
+{
+    outline: 0;
+}
+
+.tabs-frames
+{
+    display: block;
+    height: calc(100% - 100px);
+    overflow:hidden;
+    width: 100%;
+
+}

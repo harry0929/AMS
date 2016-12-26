@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>{% block Title %}{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="{{ url_for('static',filename='plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='plugins/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="{{ url_for('static',filename='js/html5shiv.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/respond.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.placeholder.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Invoke the plugin
+            $('input, textarea').placeholder();
+        });
+    </script>
+    <![endif]-->
+
+    <!--[if gte IE 9]>
+    <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+    <![endif]-->
+
+    <!--[if !IE]><!-->
+    <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+    <!--<![endif]-->
+    {% block CSS %}{% endblock %}
+
+</head>
+<body>
+    {% block Body %}{% endblock %}
+</body>
+    <script src="{{ url_for('static',filename='plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- Custom and plugin javascript -->
+    {% block JS %}{% endblock %}
+
+</html>
