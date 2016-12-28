@@ -1,5 +1,4 @@
-from flask import Flask, g, request, redirect, url_for, session
-from flask_restful import Api, Resource, url_for
+from flask import Flask, g, redirect
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 import hashlib
@@ -8,7 +7,6 @@ import os
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:@localhost/AMS"
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = 60 * 60 * 30
 
@@ -33,13 +31,9 @@ def login_required(f):
 
 from .controls import Home, User
 
-# from controls import home, record, account
-#
 app.register_blueprint(Home, url_prefix='/')
 app.register_blueprint(Home, url_prefix='/home')
 app.register_blueprint(User, url_prefix='/user')
-
-
 
 from .api.v1 import blueprint
 

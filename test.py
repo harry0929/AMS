@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
-import urllib2
-import json
 import requests
 
 from Web.models import Asset
 
-url = "http://127.0.0.1:5000/api/v1/Assets/1"
+url = "http://127.0.0.1:5000/api/v1/Asset/1"
 
-r = requests.get(url)
+# r = requests.get(url)
 # r.encoding = 'utf-8'
 
-print r.content
+# print(r.content)
 #
 # print dict["dept"]
 
@@ -40,6 +38,11 @@ print r.content
 # print json.dumps(arr, ensure_ascii= False)
 #
 # print type(models) == list
+
+from Web.models import Asset
+
+asset = Asset()
+print(asset.validator(""))
 
 
 

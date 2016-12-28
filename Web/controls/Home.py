@@ -1,7 +1,7 @@
 #! usr/bin/python
 # coding=utf-8
 import operator
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template
 from Web.services import MenuService
 
 Home = Blueprint('Home', __name__, template_folder='templates', static_url_path='', static_folder='')

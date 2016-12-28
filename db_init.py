@@ -8,7 +8,6 @@ from Web.models import *
 from decimal import *
 import xlrd
 
-
 if __name__ == '__main__':
     db.drop_all()
     db.create_all()
@@ -27,7 +26,6 @@ if __name__ == '__main__':
     for m in menus:
         db.session.add(m)
 
-
     # 系统用户
     u = User(name='admin', email='@', nickname='管理员', password=hashlib.new("md5", "admin".encode("utf-8")).hexdigest(),
              reg_time=datetime.now(), status=0, deleted=False)
@@ -35,17 +33,16 @@ if __name__ == '__main__':
 
     #
     Categorys = [
-        AssetCategory(name='医疗设备',code='01'),
-        AssetCategory(name='医疗家具',code='02'),
-        AssetCategory(name='办公家具',code='03'),
-        AssetCategory(name='电子及办公设备',code='04'),
-        AssetCategory(name='办公车辆',code='05')
+        AssetCategory(name='医疗设备', code='01'),
+        AssetCategory(name='医疗家具', code='02'),
+        AssetCategory(name='办公家具', code='03'),
+        AssetCategory(name='电子及办公设备', code='04'),
+        AssetCategory(name='办公车辆', code='05')
     ]
     for c in Categorys:
         db.session.add(c)
 
     db.session.commit()
-
 
     types = [
         ManagerType(name='在帐资产'),
@@ -68,12 +65,12 @@ if __name__ == '__main__':
     sheetDetail = excel.sheet_by_name(u"固定资产清单")
 
     for iRow in range(sheetDepartment.nrows):
-        d = Department(name=sheetDepartment.cell(iRow,0).value)
+        d = Department(name=sheetDepartment.cell(iRow, 0).value)
         db.session.add(d)
     db.session.commit()
 
     for iRow in range(sheetSupplier.nrows):
-        c = Supplier(name=sheetSupplier.cell(iRow,0).value)
+        c = Supplier(name=sheetSupplier.cell(iRow, 0).value)
         db.session.add(c)
 
     for iRow in range(4, sheetDetail.nrows):
