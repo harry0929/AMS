@@ -51,8 +51,6 @@ class Asset(db.Model):
 
     def validator(self, agrs):
 
-        print(type(Asset.code.property))
-
         for k, v in Asset.__dict__.items():
             if isinstance(v, InstrumentedAttribute):
                 print("%s is InstrumentedAttribute" % v)

@@ -15,9 +15,11 @@ class Assets(Resource):
             return jsonify(code=-1, result="无记录", data="")
 
     def put(self, code):
+        return "put"
         pass
 
     def delete(self, code):
+        return "delete"
         pass
 
 

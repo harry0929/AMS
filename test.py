@@ -5,7 +5,11 @@ from Web.models import Asset
 
 url = "http://127.0.0.1:5000/api/v1/Asset/1"
 
-# r = requests.get(url)
+r = requests.put(url)
+print(r.content)
+
+r = requests.delete(url)
+print(r.content)
 # r.encoding = 'utf-8'
 
 # print(r.content)
@@ -39,10 +43,7 @@ url = "http://127.0.0.1:5000/api/v1/Asset/1"
 #
 # print type(models) == list
 
-from Web.models import Asset
-
-asset = Asset()
-print(asset.validator(""))
-
-
-
+# from Web.models import Asset
+#
+# asset = Asset()
+# print(asset.validator(""))
